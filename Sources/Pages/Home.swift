@@ -5,7 +5,7 @@ struct Home: StaticLayout {
     var title = "Home"
 
     var body: some HTML {
-        Text("Hello world!")
+        Text("Tawana Cook Purnell - For District 1")
             .font(.title1)
     }
 }
