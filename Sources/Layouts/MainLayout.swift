@@ -18,7 +18,7 @@ struct MainLayout: Layout {
 			MetaLink(href: "/css/main.css", rel: "stylesheet")
 		}
         Body {
-			content.background(.black)
+			content.background(.black).width(.max)
 		}
     }
 }
