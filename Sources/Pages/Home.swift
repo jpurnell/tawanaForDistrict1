@@ -27,19 +27,23 @@ struct Home: StaticLayout {
 				.foregroundStyle(.black)
 				.padding(.vertical)
 		}
-		.background(.black)
-		Group {
-			List {
-				Text(markdown: "A highly experienced **EDUCATOR** with a graduate degree in **SCHOOL LEADERSHIP**")
-				Text(markdown: "Known for creating **SAFE** and **HEALTHY** schools")
-				Text(markdown: "Spent a career as a **TEACHER** and **ADMINISTRATOR**")
-				Text(markdown: "Served in public, independent, catholic, and charter schools")
-				Text(markdown: "Worked on local, regional, and national boards")
-				Text(markdown: "Makes bold, thoughtful decisions that support **STUDENT SUCCESS**, enhance **FACULTY SATISFACTION**, increase **FAMILY ENGAGEMENT**, and build **COMMUNITY COLLABORATIONS**")
-			}.font(.title3)
-		}
+		VStack {
+			Link("Support My Candidacy via ActBlue", target: "https://www.actblue.com/")
+				.linkStyle(.button).target(.newWindow)
+		}.frame(alignment: .center).padding()
+		List {
+			Text(markdown: "A highly experienced **EDUCATOR** with a graduate degree in **SCHOOL LEADERSHIP**")
+			Text(markdown: "Known for creating **SAFE** and **HEALTHY** schools")
+			Text(markdown: "Spent a career as a **TEACHER** and **ADMINISTRATOR**")
+			Text(markdown: "Served in public, independent, catholic, and charter schools")
+			Text(markdown: "Worked on local, regional, and national boards")
+			Text(markdown: "Makes bold, thoughtful decisions that support **STUDENT SUCCESS**, enhance **FACULTY SATISFACTION**, increase **FAMILY ENGAGEMENT**, and build **COMMUNITY COLLABORATIONS**")
+		}.font(.title3)
 		.foregroundStyle(.white)
-//		.frame(alignment: .center)
 		.padding(.top)
+		VStack {
+			Link("Support My Candidacy via ActBlue", target: "https://www.actblue.com/")
+				.linkStyle(.button).target(.newWindow)
+		}.frame(alignment: .center).padding()
     }
 }
