@@ -14,14 +14,24 @@ struct Home: StaticLayout {
 		.foregroundStyle(.white)
 		.frame(alignment: .center)
 		.padding()
-		Group {
-			Image("/images/tcpFlyer.JPG", description: "Vote Tawana Cook Purnell for District 1 School Board on May 26")
+		ZStack {
+				Image("/images/tcpFlyer.JPG",
+					  description: "Vote Tawana Cook Purnell for District 1 School Board on May 26")
+					.resizable()
+					.padding(.horizontal)
+			VStack {
+				Spacer(size: 800)
+				Text("PREPARING PITTSBURGH'S CHILDREN TODAY FOR A BETTER WORLD TOMORROW!")
+					.horizontalAlignment(.center)
+					.font(.title2)
+					.fontWeight(.bold)
+					.background(Color.gold)
+					.foregroundStyle(.black)
+					.padding()
+			}
 		}
 		.background(.black)
-		.frame(alignment: .center)
-		.padding()
 		Group {
-			Text("PREPARING PITTSBURGH'S CHILDREN TODAY FOR A BETTER WORLD TOMORROW!").horizontalAlignment(.center).font(.title2).fontWeight(.bold).background(Color.gold).foregroundStyle(.black).padding()
 			List {
 				Text(markdown: "A highly experienced **EDUCATOR** with a graduate degree in **SCHOOL LEADERSHIP**").horizontalAlignment(.center)
 				Text(markdown: "Known for creating **SAFE** and **HEALTHY** schools").horizontalAlignment(.center)

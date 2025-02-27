@@ -1,11 +1,13 @@
 body {
   font-family: "Helvetica", system-ui, "Arial", "Sans-Serif";
   font-size: 0.85em;
+  background-color: black;
 }
 
 @media only screen and (min-width: 1142px) {
   /* For desktop: */
   body {
+    background-color: black;
     width: 100%;
     max-width: 100%
   }
@@ -16,4 +18,6 @@ body {
   width: 100%;
   margin: 0;
   float: none;
+  background-color: black;
 }
+
