@@ -28,7 +28,7 @@ struct Home: StaticLayout {
 				.padding(.vertical)
 		}
 		VStack {
-			Link("Support My Candidacy via ActBlue", target: "https://www.actblue.com/")
+			Link("Support Tawana's Candidacy via ActBlue", target: "https://www.actblue.com/")
 				.linkStyle(.button).target(.newWindow)
 		}.frame(alignment: .center).padding()
 		List {
@@ -42,7 +42,7 @@ struct Home: StaticLayout {
 		.foregroundStyle(.white)
 		.padding(.top)
 		VStack {
-			Link("Support My Candidacy via ActBlue", target: "https://www.actblue.com/")
+			Link("Support Tawana's Candidacy via ActBlue", target: "https://www.actblue.com/")
 				.linkStyle(.button).target(.newWindow)
 		}.frame(alignment: .center).padding()
     }
