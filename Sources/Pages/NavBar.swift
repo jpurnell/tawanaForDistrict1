@@ -12,6 +12,7 @@ enum FontFamily: String, Codable {
 	case tayLennon = "TAYLennonRegular"
 	case libreFranklin = "Libre Franklin"
 	case franklinGothic = "franklin_gothic"
+	case gotham
 }
 
 public struct NavBar: Component {
@@ -21,7 +22,7 @@ public struct NavBar: Component {
 		return "<a href=\"\(deployment().rawValue)\" class=\"navbar-brand\" aria-label=\"home\"><img src=\"\(image)\" aria-label=\"\(altText)\" class=\"img-fluid mx-auto\" style=\"width: \(width)px; height: \(height)px\"></a>"
 	}
 	func header(_ message: String = "Tawana Cook Purnell", _ fontFamily: FontFamily = .princetonMonticello) -> String {
-		return "<a href=\"\(deployment().rawValue)\" class=\"navbar-brand\"><h3 style=\"font-family: \(fontFamily.rawValue); font-size: calc(1.2rem + .5vw); color: #FFC107; line-height: 2rem; margin-bottom: 0rem; text-align: center; class=\"text-center mx-auto\">\(message)</h2>"
+		return "<a href=\"\(deployment().rawValue)\" class=\"navbar-brand\"><h3 style=\"font-family: \(fontFamily.rawValue); font-size: calc(1.2rem + .5vw); color: #ffb612; line-height: 2rem; margin-bottom: 0rem; text-align: center; class=\"text-center mx-auto\">\(message)</h2>"
 	}
 	func kicker(_ message: String = "For District 1", _ fontFamily: FontFamily = .princetonMonticello) -> String {
 		"<h4 style=\"font-family: \(fontFamily.rawValue); font-size: calc(0.55rem + 0.5vw); color: var(--bs-light); line-height: 1rem; padding: 0em; margin-bottom: 0rem; letter-spacing: .10rem; class=\"text-center mx-auto\">\(message)</h4></a>"

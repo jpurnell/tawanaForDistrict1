@@ -54,10 +54,8 @@ struct MyTheme: Theme {
 
 			Body {
 				NavBar()
-				Section {
-					page.body
-				}
-				.width(.max)
+				Section { page.body	}
+//				.width(.max)
 			}
 			.background(.black)
 		}

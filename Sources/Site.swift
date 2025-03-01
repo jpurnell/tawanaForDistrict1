@@ -61,5 +61,5 @@ public func deployment() -> SiteLocation {
 
 extension Color {
 	public static let princetonOrange = Color(hex: "#EE7F2D")
-	public static let steelerGold = Color(hex: "#FFC107")
+	public static let steelerGold = Color(hex: "#FFB612")
 }
