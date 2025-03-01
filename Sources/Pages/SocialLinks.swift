@@ -16,9 +16,9 @@ public struct SocialLinks: Component {
 		for link in links {
 			Text {
 				Link(
-					Image(link.fullLink, description: link.site)
+					Image(link.fullLink, description: "Join Tawana on \(link.site)")
 						.resizable()					
-						.opacity(0.74)
+						.opacity(1.0)
 						.foregroundStyle(.steelerGold)
 					, target: link.link)
 				.role(.secondary)

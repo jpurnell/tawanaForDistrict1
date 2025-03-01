@@ -27,6 +27,9 @@ struct Home: StaticPage {
 			modal("stewardship", title: "Stewardship of Resources", context: context)
 			modal("safety", title: "Safe and Healthy Learning Spaces", context: context)
 		}
+		Group {
+			SocialLinks()
+		}.frame(maxWidth: .max, alignment: .leading)
 	}
 }
 

@@ -57,6 +57,7 @@ struct MyTheme: Theme {
 				Section { page.body	}
 				.width(.max)
 				.padding()
+				Text("©\(Calendar.current.component(.year, from: Date())) Friends of Tawana Cook Purnell").font(.title6)
 			}
 			.background(.black)
 		}
