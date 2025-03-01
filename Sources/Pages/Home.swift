@@ -5,90 +5,64 @@ struct Home: StaticPage {
     var title = "Home"
 	
 	func body(context: PublishingContext) -> [BlockElement] {
-		// MARK: - Call to Action
+		flyerText("VOTE!", weight: .bold, color: .steelerGold)
+		flyerText("Tawana Cook Purnell", weight: .bold)
+		flyerText("for District 1", font:. title2)
+		flyerText("Pittsburgh Public Schools Board of Directors", font: .title2)
 		Group {
-			Text("VOTE!").horizontalAlignment(.center).font(.title1).fontWeight(.bold).foregroundStyle(.steelerGold).background(.black)
-			Text("TAWANA COOK PURNELL").horizontalAlignment(.center).font(.title1).fontWeight(.heavy)
-			Text("FOR DISTRICT 1").horizontalAlignment(.center).font(.title2).fontWeight(.bold)
-			Text("PITTSBURGH PUBLIC SCHOOLS BOARD OF DIRECTORS").horizontalAlignment(.center).font(.title2).fontWeight(.light)
+			Image("/images/photos/tcpFlyer.JPG", description: "Vote Tawana Cook Purnell for District 1 School Board on May 26").resizable().frame(width: 500)
+			flyerText("Preparing Pittsburgh's Children Today for a Better World Tomorrow!", font: .title2, weight: .bold, color: .black, background: .steelerGold).padding(.vertical)
+		}.horizontalAlignment(.center)
+		Group {
+			modalButton("Excellence")
+			modalButton("Stewardship")
+			modalButton("Safety")
+		}.horizontalAlignment(.center)
+		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://www.actblue.com/")
+		flyerList(context: context)
+		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://www.actblue.com/")
+		
+		Group {
+			modal("excellence", title: "Academic Excellence and Confidence", context: context)
+			modal("stewardship", title: "Stewardship of Resources", context: context)
+			modal("safety", title: "Safe and Healthy Learning Spaces", context: context)
 		}
-		.foregroundStyle(.white)
-		.padding()
-		// MARK: - Image and Banner
-		Group {
-			Image("/images/photos/tcpFlyer.JPG",
-				  description: "Vote Tawana Cook Purnell for District 1 School Board on May 26")
-			.resizable()
-			.frame(width: 500)
-			Text("PREPARING PITTSBURGH'S CHILDREN TODAY FOR A BETTER WORLD TOMORROW!")
-				.font(.title2)
-				.fontWeight(.bold)
-				.background(Color.steelerGold)
-				.foregroundStyle(.black)
-				.padding(.vertical)
-		}
-		.padding(.horizontal)
-		.frame(maxWidth: "90%", alignment: .center)
-		.horizontalAlignment(.center)
-		// MARK: - Modal Buttons
-		Group {
-			Button("Excellence") {
-				ShowModal(id: "excellence")
-			}.buttonSize(.large).foregroundStyle(.steelerGold)
-//				Spacer(size: 10)
-			Button("Stewardship") {
-				ShowModal(id: "stewardship")
-			}.buttonSize(.large).foregroundStyle(.steelerGold)
-//				Spacer(size: 20)
-			Button("Safety") {
-				ShowModal(id: "safety")
-			}.buttonSize(.large).foregroundStyle(.steelerGold)
-//				Spacer(size: 20)
-		}.frame(width: "90%")
-			.horizontalAlignment(.center)
-		// MARK: - Modal Frames
-		Group {
-			Modal(id: "excellence") {
-				for content in context.allContent.filter({$0.title == "Academic Excellence and Confidence"}) {
-					Text(content.body).horizontalAlignment(.leading).foregroundStyle(.black)
-						.font(.title3)
-				}
-			}
-			Modal(id: "stewardship") {
-				for content in context.allContent.filter({$0.title == "Stewardship of Resources"}) {
-					Text(content.body).horizontalAlignment(.leading).foregroundStyle(.black)
-						.font(.title3)
-				}
-			}
-			Modal(id: "safety") {
-				for content in context.allContent.filter({$0.title == "Safe and Healthy Learning Spaces"}) {
-					Text(content.body).horizontalAlignment(.leading).foregroundStyle(.black)
-						.font(.title3)
-				}
-			}
-		}
+	}
+}
 
-		// MARK: - Actblue Link
-		Text {
-			Link("Support Tawana's Candidacy via ActBlue", target: "https://www.actblue.com/")
-				.linkStyle(.button)
+extension Home {
+	func modalButton(_ title: String, size: ButtonSize = .large, color: Color = .steelerGold) -> Button {
+		return Button(title) { ShowModal(id: "\(title.lowercased())", options: [.focus(true), .keyboard(true)])}.buttonSize(size).foregroundStyle(color)
+	}
+	
+	func modal(_ id: String, title: String, alignment: HorizontalAlignment = .leading, color: Color = .black, size: Font = .title3, context: PublishingContext) -> Modal {
+		Modal(id: id) {
+			for content in context.allContent.filter({$0.title == title}) {
+				Text(content.body).horizontalAlignment(alignment).foregroundStyle(color)
+					.font(size)
+			}
+		}
+	}
+	
+	func donateButton(_ text: String, destination: String, size: ButtonSize = .medium) -> Text {
+		return Text {
+			Link(text, target: destination)
+				.linkStyle(.button).buttonSize(size)
 		}
 		.horizontalAlignment(.center)
 		.padding()
-		// MARK: - Position List
+	}
+	
+	func flyerList(sourceFolder: String = "flyer", context: PublishingContext) -> List {
 		List {
-			for content in context.allContent.filter({$0.tags.contains("flyer")}).sorted(by: {$0.title < $1.title}) {
+			for content in context.allContent.filter({$0.tags.contains(sourceFolder)}).sorted(by: {$0.title < $1.title}) {
 				Text(content.body).horizontalAlignment(.leading).foregroundStyle(.steelerGold)
 					.font(.title3)
 			}
 		}.listStyle(.unordered(.default)).foregroundStyle(.steelerGold)
-		// MARK: - Actblue Link
-		Text {
-			Link("Support Tawana's Candidacy via ActBlue", target: "https://www.actblue.com/")
-				.linkStyle(.button)
-		}
-		.horizontalAlignment(.center)
-		.padding()
-		
+	}
+	
+	func flyerText(_ string: String, alignment: HorizontalAlignment = .center, font: Font = .title1, weight: FontWeight = .medium, color: Color = .white, background: Color = .black) -> Text {
+		return Text(string).horizontalAlignment(alignment).font(font).fontWeight(weight).background(background).foregroundStyle(color)
 	}
 }
