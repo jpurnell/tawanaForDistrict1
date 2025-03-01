@@ -12,7 +12,7 @@ struct Endorsements: StaticPage {
 				.frame(width: "300px")
 				.padding(.horizontal, "10px")
 				.style("float: left", "margin-right: 5%", "margin-bottom: 1%")
-			Text(content.body).foregroundStyle(.light)
+			Text(content.body).foregroundStyle(.steelerGold)
 				.frame(width: "70%", maxWidth: "800px")
 		}
 	}
