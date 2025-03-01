@@ -1,6 +1,6 @@
 body {
   font: 1.25rem/1.85 "princeton_monticello";
-  color: #ffc107;
+  color: #FFD612;
   line-height: 1.85rem
 /*  background-color: black;*/
 }
@@ -9,14 +9,14 @@ body {
   /* For desktop: */
   body {
 /*    background-color: black;*/
-	color: #ffc107;
+	color: #FFD612;
     width: 100%;
     max-width: 100%
   }
 }
 
 a {
-	color: #FFC107;
+	color: #FFD612;
 	text-decoration: none;
 }
 
