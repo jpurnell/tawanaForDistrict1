@@ -37,7 +37,7 @@ public struct NavBar: Component {
 	}
 
 	public func body(context: PublishingContext) -> [any PageElement] {
-		NavigationBar(logo: navBarString(logo: logo("/images/logos/bonsai_steelerGold.svg", altText: "Tawana Cook Purnell for District 1", 100, 100), header("Tawana Cook Purnell"), kicker("Pittsburgh Public Schools, District 1"))) {
+		NavigationBar(logo: navBarString(logo: logo("/images/logos/bonsai_steelerGold.svg", altText: "Tawana Cook Purnell for District 1", 60, 60), header("Tawana Cook Purnell"), kicker("Pittsburgh Public Schools, District 1"))) {
 			Link(Button("Meet Tawana").id("Meet Tawana").buttonSize(.large).foregroundStyle(.steelerGold), target: Meet())
 			Link(Button("Excellence").id("Excellence").buttonSize(.large).foregroundStyle(.steelerGold), target: Excellence())
 			Link(Button("Stewardship").id("Stewardship").buttonSize(.large).foregroundStyle(.steelerGold), target: Stewardship())
