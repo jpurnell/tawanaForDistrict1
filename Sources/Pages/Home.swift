@@ -19,8 +19,7 @@ struct Home: StaticPage {
 			Image("/images/photos/tcpFlyer.JPG",
 				  description: "Vote Tawana Cook Purnell for District 1 School Board on May 26")
 			.resizable()
-			.frame(height: 500)
-			.padding(.horizontal)
+			.frame(width: 500)
 			Text("PREPARING PITTSBURGH'S CHILDREN TODAY FOR A BETTER WORLD TOMORROW!")
 				.font(.title2)
 				.fontWeight(.bold)
@@ -28,6 +27,7 @@ struct Home: StaticPage {
 				.foregroundStyle(.black)
 				.padding(.vertical)
 		}
+		.padding(.horizontal)
 		.frame(maxWidth: "90%", alignment: .center)
 		.horizontalAlignment(.center)
 		// MARK: - Modal Buttons
