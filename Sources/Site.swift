@@ -15,9 +15,11 @@ struct IgniteWebsite {
 }
 
 struct TawanaPurnell: Site {
-    var name = "Tawana Cook Purnell"
-    var titleSuffix = " – Candidate for School Board District 1"
-    var url = URL(static: "https://www.tawanacookpurnell.net")
+
+	var url = URL(string: "https://www.tawanacookpurnell.net")!
+	
+	var name = "Candidate for School Board District 1"
+    var titleSuffix = " – Tawana Cook Purnell"
 	var description = "Official Homepage for Tawana Cook Purnell, candidate for Pittsburgh's District 1 School Board"
 	
 	var language: Locale.Language = .init(identifier: "en-US")
@@ -26,7 +28,38 @@ struct TawanaPurnell: Site {
 	var robotsConfiguration = Robots()
 	
     var author = "Justin Purnell"
+	
+	var homePage = Home()
+	var theme = MyTheme()
+	
+	var pages: [any StaticPage] {
+		Home()
+		Meet()
+		Excellence()
+		Safety()
+		Stewardship()
+		Endorsements()
+	}
+	var layouts: [any ContentPage] {
+		AboutLayout()
+		MainLayout()
+	}
+}
 
-    var homePage = Home()
-    var layout = MainLayout()
+public enum SiteLocation: String {
+	case production = "https://www.tawanacookpurnell.net"
+	case staging = "https://staging.tawanacookpurnell.net"
+}
+
+func siteLocation(_ site: SiteLocation) -> String {
+	return site.rawValue
+}
+
+public func deployment() -> SiteLocation {
+	return .production
+}
+
+extension Color {
+	public static let princetonOrange = Color(hex: "#EE7F2D")
+	public static let steelerGold = Color(hex: "#FFC107")
 }
