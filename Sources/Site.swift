@@ -27,7 +27,7 @@ struct TawanaPurnell: Site {
 	var feedConfiguration = RSS()
 	var robotsConfiguration = Robots()
 	
-    var author = "Justin Purnell"
+    var author = "Friends of Tawana Cook Purnell"
 	
 	var homePage = Home()
 	var theme = MyTheme()
