@@ -35,15 +35,19 @@ public struct NavBar: Component {
    \(kicker)
 """
 	}
+	
 
 	public func body(context: PublishingContext) -> [any PageElement] {
 		NavigationBar(logo: navBarString(logo: logo("/images/logos/bonsai_steelerGold.svg", altText: "Tawana Cook Purnell for District 1", 60, 60), header("Tawana Cook Purnell"), kicker("Pittsburgh Public Schools, District 1"))) {
-			Link(Button("Meet Tawana").id("Meet Tawana").buttonSize(.large).foregroundStyle(.steelerGold), target: Meet())
-			Link(Button("Excellence").id("Excellence").buttonSize(.large).foregroundStyle(.steelerGold), target: Excellence())
-			Link(Button("Stewardship").id("Stewardship").buttonSize(.large).foregroundStyle(.steelerGold), target: Stewardship())
-			Link(Button("Safety").id("Safety").buttonSize(.large).foregroundStyle(.steelerGold), target: Safety())
-			Link(Button("Endorsements").id("Endorsements").buttonSize(.large).foregroundStyle(.steelerGold), target: Endorsements())
-			Link(Button("Donate").buttonSize(.large).role(.primary), target: "https://www.actblue.com/")
+			Link(Button("Meet Tawana").id("Meet Tawana").buttonSize(.small).foregroundStyle(.steelerGold), target: Meet())
+			Link(Button("Excellence").id("Excellence").buttonSize(.small).foregroundStyle(.steelerGold), target: Excellence())
+			Link(Button("Stewardship").id("Stewardship").buttonSize(.small).foregroundStyle(.steelerGold), target: Stewardship())
+			Link(Button("Safety").id("Safety").buttonSize(.small).foregroundStyle(.steelerGold), target: Safety())
+			Link(Button("Endorsements").id("Endorsements").buttonSize(.small).foregroundStyle(.steelerGold), target: Endorsements())
+			Link(target: "mailto:tawanaForDistrict1@gmail.com") {
+				Button("Contact").id("Contact").buttonSize(.small).foregroundStyle(.steelerGold)
+			}
+			Link(Button("Donate").buttonSize(.small).role(.primary), target: "https://www.actblue.com/")
 		}
 		.navigationItemAlignment(.trailing)
 		.navigationBarStyle(.light)
