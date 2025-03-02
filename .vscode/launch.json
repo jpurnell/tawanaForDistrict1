@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:tawanaForDistrict1}",
+            "name": "Debug IgniteStarter",
+            "program": "${workspaceFolder:tawanaForDistrict1}/.build/debug/IgniteStarter",
+            "preLaunchTask": "swift: Build Debug IgniteStarter"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:tawanaForDistrict1}",
+            "name": "Release IgniteStarter",
+            "program": "${workspaceFolder:tawanaForDistrict1}/.build/release/IgniteStarter",
+            "preLaunchTask": "swift: Build Release IgniteStarter"
+        }
+    ]
+}
