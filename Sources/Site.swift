@@ -39,6 +39,7 @@ struct TawanaPurnell: Site {
 		Safety()
 		Stewardship()
 		Endorsements()
+		Contact()
 	}
 	var layouts: [any ContentPage] {
 		AboutLayout()

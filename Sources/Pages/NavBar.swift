@@ -72,7 +72,7 @@ public struct NavBar: Component {
 			Link(Button("Stewardship").id("Stewardship").buttonSize(.small).foregroundStyle(.steelerGold), target: Stewardship())
 			Link(Button("Safety").id("Safety").buttonSize(.small).foregroundStyle(.steelerGold), target: Safety())
 			Link(Button("Endorsements").id("Endorsements").buttonSize(.small).foregroundStyle(.steelerGold), target: Endorsements())
-			Link(target: "mailto:tawanaForDistrict1@gmail.com") {
+			Link(target: Contact()) {
 				Button("Contact").id("Contact").buttonSize(.small).foregroundStyle(.steelerGold)
 			}
 			Link(Button("Donate").buttonSize(.small).role(.primary), target: "https://www.actblue.com/")
