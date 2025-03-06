@@ -75,7 +75,7 @@ public struct NavBar: Component {
 			Link(target: Contact()) {
 				Button("Contact").id("Contact").buttonSize(.small).foregroundStyle(.steelerGold)
 			}
-			Link(Button("Donate").buttonSize(.small).role(.primary), target: "https://www.actblue.com/")
+			Link(Button("Donate").buttonSize(.small).role(.primary), target: "https://secure.actblue.com/donate/tcp4pps")
 		}
 		.navigationItemAlignment(.trailing)
 		.navigationBarStyle(.light)

@@ -23,9 +23,9 @@ struct Home: StaticPage {
 			modalButton("Safety")
 		}.horizontalAlignment(.center)
 		// Creates a donation button linking to ActBlue
-		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://www.actblue.com/")
+		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://secure.actblue.com/donate/tcp4pps")
 		flyerList(context: context)
-		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://www.actblue.com/")
+		donateButton("Support Tawana's Candidacy via ActBlue", destination: "https://secure.actblue.com/donate/tcp4pps")
 		
 		Group {
 			// Creates modals for each topic with specific titles
